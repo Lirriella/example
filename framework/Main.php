@@ -2,14 +2,14 @@
 
 class Main
 {
-  private $_modelName; // имя модели
-  private $_actionName; // действие
+  private $_modelName; // РёРјСЏ РјРѕРґРµР»Рё
+  private $_actionName; // РґРµР№СЃС‚РІРёРµ
 
-  const DEFAULT_MODEL = 'Site'; // модель по умолчанию
-  const DEFAULT_ACTION = 'Index'; // действие по умолчанию
-  const DEFAULT_PAGE = 'index.php'; // точка входа
+  const DEFAULT_MODEL = 'Site'; // РјРѕРґРµР»СЊ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+  const DEFAULT_ACTION = 'Index'; // РґРµР№СЃС‚РІРёРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+  const DEFAULT_PAGE = 'index.php'; // С‚РѕС‡РєР° РІС…РѕРґР°
     
-  // конструктор
+  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
   public function __construct()
   {
     $this->setDefaultValues();
@@ -42,32 +42,32 @@ class Main
         }
     }
   
-  // задать значения полей
+  // Р·Р°РґР°С‚СЊ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РµР№
   private function setDefaultValues()
   {
       $this->modelName = Main::calcModelName();
       $this->actionName = Main::calcActionName();
   }
   
-  // определение модели
+  // РѕРїСЂРµРґРµР»РµРЅРёРµ РјРѕРґРµР»Рё
   private static function calcModelName()
   {
      return isset($_GET['m']) ? $_GET['m'] : Main::DEFAULT_MODEL;
   }
   
-  // определение действия
+  // РѕРїСЂРµРґРµР»РµРЅРёРµ РґРµР№СЃС‚РІРёСЏ
   private static function calcActionName()
   {
      return isset($_GET['a']) ? $_GET['a'] : Main::DEFAULT_ACTION;
   }
   
-  // получить адрес страницы
+  // РїРѕР»СѓС‡РёС‚СЊ Р°РґСЂРµСЃ СЃС‚СЂР°РЅРёС†С‹
   public static function getUrl()
   {
     return Main::DEFAULT_PAGE . '?m='. Main::calcModelName() . '&a=' . Main::calcActionName();
   }
   
-  // выполнить действие
+  // РІС‹РїРѕР»РЅРёС‚СЊ РґРµР№СЃС‚РІРёРµ
   private function doAction()
   {
     require_once('Model.php');

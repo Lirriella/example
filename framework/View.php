@@ -2,14 +2,14 @@
 
 class View extends Main
 {
-  private $_modelName; // имя модели
-  private $_viewName; // имя представления
-  private $_params; // параметры из контроллера
+  private $_modelName; // РёРјСЏ РјРѕРґРµР»Рё
+  private $_viewName; // РёРјСЏ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ
+  private $_params; // РїР°СЂР°РјРµС‚СЂС‹ РёР· РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
 
-  const VIEW_DIR = 'protected/views'; // путь к представлению
-  const BASE_VIEW_DIR = 'protected/views/Layouts/main.php'; // путь к базовому шаблону
+  const VIEW_DIR = 'protected/views'; // РїСѓС‚СЊ Рє РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЋ
+  const BASE_VIEW_DIR = 'protected/views/Layouts/main.php'; // РїСѓС‚СЊ Рє Р±Р°Р·РѕРІРѕРјСѓ С€Р°Р±Р»РѕРЅСѓ
   
-  // конструктор
+  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
   public function __construct($modelName, $viewName, $params = array())
   {
     $this->modelName = $modelName;
@@ -50,23 +50,23 @@ class View extends Main
         }
     }
   
-  // полный путь к файлу
+  // РїРѕР»РЅС‹Р№ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ
   public function getFullPathToView()
   {
     return View::VIEW_DIR.'/'.$this->modelName . '/' . $this->viewName .'.php';
   }
   
-  // получить текст из представления
+  // РїРѕР»СѓС‡РёС‚СЊ С‚РµРєСЃС‚ РёР· РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ
   public function getViewText()
   {
-    extract($this->params, EXTR_OVERWRITE); // массив в переменные
+    extract($this->params, EXTR_OVERWRITE); // РјР°СЃСЃРёРІ РІ РїРµСЂРµРјРµРЅРЅС‹Рµ
     require_once($this->getFullPathToView());
   }
   
-  // вывод страницы
+  // РІС‹РІРѕРґ СЃС‚СЂР°РЅРёС†С‹
   public function showPage()
   {
-      extract($this->params, EXTR_OVERWRITE); // массив в переменные
+      extract($this->params, EXTR_OVERWRITE); // РјР°СЃСЃРёРІ РІ РїРµСЂРµРјРµРЅРЅС‹Рµ
       require_once(View::BASE_VIEW_DIR);
   }
  

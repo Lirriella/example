@@ -3,20 +3,20 @@
 class BooksController extends Controller
 {
 
-  // конструктор
+  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
   public function __construct()
   {
     $this->modelName = 'Books';
     $this->controllerName = 'BooksController';
   }
 
-  // страница по умолчанию
+  // СЃС‚СЂР°РЅРёС†Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
   public function actionIndex()
   {
     Site::goToDefaultPage();
   }
 
-  // добавление объекта
+  // РґРѕР±Р°РІР»РµРЅРёРµ РѕР±СЉРµРєС‚Р°
 	public function actionCreate()
 	{
     $book = new Books;  
@@ -34,20 +34,16 @@ class BooksController extends Controller
     $this->render('create', array('book'=>$book));
 	}
 	
-  // список объектов
+  // СЃРїРёСЃРѕРє РѕР±СЉРµРєС‚РѕРІ
   public function actionList()
   {
     $this->render('list');
   }
 	
-	// искать по названию (аякс)
+	// РёСЃРєР°С‚СЊ РїРѕ РЅР°Р·РІР°РЅРёСЋ (Р°СЏРєСЃ)
 	public function actionSearch()
 	{
-      if (isset($_GET['val']))
-      {
-        $_GET['val'] = iconv("UTF-8", "windows-1251", $_GET['val']);
-      }
-      else
+      if (!isset($_GET['val']))
       {
         $_GET['val'] = NULL;
       }

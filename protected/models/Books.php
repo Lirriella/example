@@ -1,7 +1,7 @@
 <?php
 class Books extends Model
 {    
-    // поля
+    // РїРѕР»СЏ
     private $title;
     private $year;
     private $author;
@@ -9,12 +9,12 @@ class Books extends Model
     private $notice;
     private $search;
     
-    public static $required = array('title','author'); // обязательные поля
-    public static $dbFields = array('title','year','author','description'); // поля для записи в базу
+    public static $required = array('title','author'); // РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РїРѕР»СЏ
+    public static $dbFields = array('title','year','author','description'); // РїРѕР»СЏ РґР»СЏ Р·Р°РїРёСЃРё РІ Р±Р°Р·Сѓ
     
-    // сообщения
-    const SAVED_TEXT = 'Данные успешно сохранены.';
-    const NOT_SAVED_TEXT = 'При сохранении произошла ошибка.';
+    // СЃРѕРѕР±С‰РµРЅРёСЏ
+    const SAVED_TEXT = 'Р”Р°РЅРЅС‹Рµ СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅС‹.';
+    const NOT_SAVED_TEXT = 'РџСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё РїСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°.';
     const TABLE_NAME = 'books';
     
     // getter
@@ -63,14 +63,14 @@ class Books extends Model
         }
     }
     
-    // заголовки полей
+    // Р·Р°РіРѕР»РѕРІРєРё РїРѕР»РµР№
     public static function getLabels($field, $checkRequires = false)
     {
       $labels = array(
-        'title' => 'Название книги',
-        'year' => 'Год выпуска',
-        'author' => 'Имя автора',
-        'description' => 'Дополнительное описание',
+        'title' => 'РќР°Р·РІР°РЅРёРµ РєРЅРёРіРё',
+        'year' => 'Р“РѕРґ РІС‹РїСѓСЃРєР°',
+        'author' => 'РРјСЏ Р°РІС‚РѕСЂР°',
+        'description' => 'Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРµ РѕРїРёСЃР°РЅРёРµ',
       );
        
       $star = NULL; 
@@ -82,13 +82,13 @@ class Books extends Model
       return isset($labels[$field]) ? $labels[$field].$star : ''.$star;
     }
     
-    // является ли заданное поле обязательным
+    // СЏРІР»СЏРµС‚СЃСЏ Р»Рё Р·Р°РґР°РЅРЅРѕРµ РїРѕР»Рµ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рј
     public static function checkRequiredField($field)
     {
       return in_array($field, Books::$required);
     }
     
-    // задать значения полям объекта из массива
+    // Р·Р°РґР°С‚СЊ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏРј РѕР±СЉРµРєС‚Р° РёР· РјР°СЃСЃРёРІР°
     public function setAttributes($attrArray)
     {
       foreach($attrArray as $key => $val)
@@ -101,7 +101,7 @@ class Books extends Model
         }
     }
 
-    // экранировать слэши
+    // СЌРєСЂР°РЅРёСЂРѕРІР°С‚СЊ СЃР»СЌС€Рё
     public static function checkField($val)
     {
         $val = stripcslashes($val);
@@ -109,7 +109,7 @@ class Books extends Model
         return $val;
     }
 
-    //валидация полей
+    //РІР°Р»РёРґР°С†РёСЏ РїРѕР»РµР№
     public function checkRequired()
     {
         $errors = array();
@@ -126,7 +126,7 @@ class Books extends Model
         return $errors;
     }
     
-    // узнать, верно/неверно заполнены поля
+    // СѓР·РЅР°С‚СЊ, РІРµСЂРЅРѕ/РЅРµРІРµСЂРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹ РїРѕР»СЏ
     public function validate()
     {
       if (!$this->checkRequired())
@@ -141,25 +141,25 @@ class Books extends Model
       return $validate;
     }
     
-    // список ошибок валидации
+    // СЃРїРёСЃРѕРє РѕС€РёР±РѕРє РІР°Р»РёРґР°С†РёРё
     public function validateErrorsText()
     {
       $text = NULL;
       $errors = $this->checkRequired();
       if ($errors)
       {
-        $text = "Не заполнены обязательные поля: ".implode(',',$errors);
+        $text = "РќРµ Р·Р°РїРѕР»РЅРµРЅС‹ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РїРѕР»СЏ: ".implode(',',$errors);
       }
       return $text;
     }
     
-    // получить объекты из базы по условию
+    // РїРѕР»СѓС‡РёС‚СЊ РѕР±СЉРµРєС‚С‹ РёР· Р±Р°Р·С‹ РїРѕ СѓСЃР»РѕРІРёСЋ
     public static function find($where = '1')
     {
       return parent::find(Books::TABLE_NAME, $where);
     }
     
-    // определить условия поиска
+    // РѕРїСЂРµРґРµР»РёС‚СЊ СѓСЃР»РѕРІРёСЏ РїРѕРёСЃРєР°
     public static function getWhere($value = NULL)
     {
       $where = '1';
@@ -170,21 +170,21 @@ class Books extends Model
       return $where;
     }
     
-    // получить список книг
+    // РїРѕР»СѓС‡РёС‚СЊ СЃРїРёСЃРѕРє РєРЅРёРі
     public static function getList($fields = array(), $value = NULL)
     {
-      $where = Books::getWhere($value); // условия поиска
-      $books = Books::find($where); // резулитат поиска
+      $where = Books::getWhere($value); // СѓСЃР»РѕРІРёСЏ РїРѕРёСЃРєР°
+      $books = Books::find($where); // СЂРµР·СѓР»РёС‚Р°С‚ РїРѕРёСЃРєР°
       
       $list = '<table class=\'book-list\'>';
-      // заголовок таблицы
+      // Р·Р°РіРѕР»РѕРІРѕРє С‚Р°Р±Р»РёС†С‹
       if (!$fields)
           {
             $fields = Books::$dbFields;
           }
       Books::addTitlesToTable($fields, $list);
           
-      // список книг
+      // СЃРїРёСЃРѕРє РєРЅРёРі
       foreach ($books as $book)
       {    
           $list .= "<tr>";          
@@ -203,7 +203,7 @@ class Books extends Model
       return $list;
     }
     
-    // добавить заголовок к таблице
+    // РґРѕР±Р°РІРёС‚СЊ Р·Р°РіРѕР»РѕРІРѕРє Рє С‚Р°Р±Р»РёС†Рµ
     public static function addTitlesToTable($fields, &$list)
     {
         $list .= "<tr>";          
@@ -214,7 +214,7 @@ class Books extends Model
         $list .= "</tr>";
     }
     
-    // сохранить объект
+    // СЃРѕС…СЂР°РЅРёС‚СЊ РѕР±СЉРµРєС‚
     public function save()
     {
       $save = false;
@@ -230,7 +230,7 @@ class Books extends Model
       return $save;
     }
     
-    // список значений полей для сохранения
+    // СЃРїРёСЃРѕРє Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ
     public function getFieldsForSave()
     {
           $keys = Books::$dbFields;
@@ -248,7 +248,7 @@ class Books extends Model
           return $fields;
     }
     
-    // сообщение о результате сохранения
+    // СЃРѕРѕР±С‰РµРЅРёРµ Рѕ СЂРµР·СѓР»СЊС‚Р°С‚Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ
     public function setSaveMsg($save)
     {
       if ($save)

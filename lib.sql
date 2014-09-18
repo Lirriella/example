@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 13, 2014 at 10:18 PM
+-- Generation Time: Sep 18, 2014 at 02:57 PM
 -- Server version: 5.1.40
 -- PHP Version: 5.3.3
 
@@ -32,12 +32,12 @@ CREATE TABLE IF NOT EXISTS `books` (
   `author` varchar(200) NOT NULL COMMENT 'имя автора',
   `description` text COMMENT 'дополнительное описание',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COMMENT='книги' AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COMMENT='книги' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `books`
 --
 
 INSERT INTO `books` (`id`, `title`, `year`, `author`, `description`) VALUES
-(1, 'книга1', 2010, 'автор1', 'описание1'),
-(2, 'книга2', NULL, 'автор2', NULL);
+(6, 'РєРЅРёРіР°2', 0, 'Р°РІС‚РѕСЂ2', 'РѕРїРёСЃР°РЅРёРµ1'),
+(5, 'РєРЅРёРіР°1', 2000, 'Р°РІС‚РѕСЂ1', 'РѕРїРёСЃР°РЅРёРµ1');

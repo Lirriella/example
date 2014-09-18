@@ -1,5 +1,5 @@
 <form action=<?php echo Main::getUrl()?> method="post">
-  <h2>Добавить книгу</h2>
+  <h2>Р”РѕР±Р°РІРёС‚СЊ РєРЅРёРіСѓ</h2>
   <table class='table-content'>
     <tr>
       <td><?php echo Books::getLabels('title',true)?></td>

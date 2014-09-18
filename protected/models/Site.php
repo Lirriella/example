@@ -1,21 +1,21 @@
 <?php
 class Site extends Model
 {
-    // пункты меню
+    // РїСѓРЅРєС‚С‹ РјРµРЅСЋ
     public static $mainMenu = array(
-      'index.php?m=Books&a=List' => 'Список',
-      'index.php?m=Books&a=Create' => 'Добавить',
+      'index.php?m=Books&a=List' => 'РЎРїРёСЃРѕРє',
+      'index.php?m=Books&a=Create' => 'Р”РѕР±Р°РІРёС‚СЊ',
     );  
     
-    const DEFAULT_PAGE = 'index.php?m=Books&a=list'; // домашняя страница
+    const DEFAULT_PAGE = 'index.php?m=Books&a=list'; // РґРѕРјР°С€РЅСЏСЏ СЃС‚СЂР°РЅРёС†Р°
     
-    // перейти на домашняю страницу
+    // РїРµСЂРµР№С‚Рё РЅР° РґРѕРјР°С€РЅСЏСЋ СЃС‚СЂР°РЅРёС†Сѓ
     public static function goToDefaultPage()
     {
       return header("Location: ".Site::DEFAULT_PAGE);
     }
     
-    // главное меню
+    // РіР»Р°РІРЅРѕРµ РјРµРЅСЋ
     public static function getMainMenu()
     {
       $menu = '<ul>';

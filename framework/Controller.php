@@ -2,15 +2,15 @@
 
 class Controller extends Main
 {
-  private $_modelName; // имя модели
-  private $_controllerName; // имя контроллера
-  private $_actionName; // действие
+  private $_modelName; // РёРјСЏ РјРѕРґРµР»Рё
+  private $_controllerName; // РёРјСЏ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
+  private $_actionName; // РґРµР№СЃС‚РІРёРµ
 
-  const CONTROLLERS_DIR = 'protected/controllers'; // путь к контроллеру
-  const FILE_POSTFIX = 'Controller'; // постфикс в имени файла контроллера
-  const ACTION_PREFIX = 'action'; // префикс функции действия
+  const CONTROLLERS_DIR = 'protected/controllers'; // РїСѓС‚СЊ Рє РєРѕРЅС‚СЂРѕР»Р»РµСЂСѓ
+  const FILE_POSTFIX = 'Controller'; // РїРѕСЃС‚С„РёРєСЃ РІ РёРјРµРЅРё С„Р°Р№Р»Р° РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
+  const ACTION_PREFIX = 'action'; // РїСЂРµС„РёРєСЃ С„СѓРЅРєС†РёРё РґРµР№СЃС‚РІРёСЏ
   
-  // конструктор
+  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
   public function __construct($modelName, $actionName)
   {
     $this->modelName = $modelName;
@@ -51,13 +51,13 @@ class Controller extends Main
         }
     }
   
-  // полный путь к файлу контроллера
+  // РїРѕР»РЅС‹Р№ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
   public function getFullPathToController()
   {
     return Controller::CONTROLLERS_DIR.'/'.$this->controllerName.'.php';
   }
   
-  // выполнить действие
+  // РІС‹РїРѕР»РЅРёС‚СЊ РґРµР№СЃС‚РІРёРµ
   public function doAction()
   {
     require_once($this->getFullPathToController());
@@ -69,7 +69,7 @@ class Controller extends Main
     $controller->$actionName();
   }
   
-  // переход к представлению
+  // РїРµСЂРµС…РѕРґ Рє РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЋ
   public function render($viewName, $params = array())
   {
     require_once('View.php');

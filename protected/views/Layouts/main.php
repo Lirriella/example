@@ -22,7 +22,7 @@
         </div>
     
         <div class="clear"></div>
-        <div class="footer">(c)Ελενΰ (skype - Lirriella)</div>
+        <div class="footer">(c)Π•Π»ΠµΠ½Π° (skype - Lirriella)</div>
 	    
     </body>
 </html>

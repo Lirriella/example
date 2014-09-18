@@ -1,14 +1,14 @@
-  <h2>Список книг</h2>
+  <h2>РЎРїРёСЃРѕРє РєРЅРёРі</h2>
   <table class='table-content'>
     <tr>
-      <td class='comment' colspan=2><input class='button' type="submit" name="add" value='Добавить' onclick="window.location='index.php?m=Books&a=Create';"/></td>
+      <td class='comment' colspan=2><input class='button' type="submit" name="add" value='Р”РѕР±Р°РІРёС‚СЊ' onclick="window.location='index.php?m=Books&a=Create';"/></td>
     </tr>
     <tr>
-      <td class='comment' colspan=2>Введите название/автора книги (полностью или частично) и нажмите "Искать"</td>
+      <td class='comment' colspan=2>Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ/Р°РІС‚РѕСЂР° РєРЅРёРіРё (РїРѕР»РЅРѕСЃС‚СЊСЋ РёР»Рё С‡Р°СЃС‚РёС‡РЅРѕ) Рё РЅР°Р¶РјРёС‚Рµ "РСЃРєР°С‚СЊ"</td>
     </tr>
     <tr>
       <td><input id='search' type="text" name="search"></td>
-      <td><input id='search-button' class='button' type="submit" name="search" value='Искать'/></td>
+      <td><input id='search-button' class='button' type="submit" name="search" value='РСЃРєР°С‚СЊ'/></td>
     </tr>
   </table>
 

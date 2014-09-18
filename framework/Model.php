@@ -2,37 +2,37 @@
 
 class Model extends Main
 {
-  const MODELS_DIR = "protected/models"; // папка с моделями
-  const CONFIG_DIR = "protected/config/main.php"; // путь к настройкам
+  const MODELS_DIR = "protected/models"; // РїР°РїРєР° СЃ РјРѕРґРµР»СЏРјРё
+  const CONFIG_DIR = "protected/config/main.php"; // РїСѓС‚СЊ Рє РЅР°СЃС‚СЂРѕР№РєР°Рј
   
-  // тексты ошибок
-  const ERROR_CONNECT = "Сервер не найден. ";
-  const ERROR_DB = "База не найдена. ";
-  const ERROR_QUERY = "Неправильный запрос. ";
+  // С‚РµРєСЃС‚С‹ РѕС€РёР±РѕРє
+  const ERROR_CONNECT = "РЎРµСЂРІРµСЂ РЅРµ РЅР°Р№РґРµРЅ. ";
+  const ERROR_DB = "Р‘Р°Р·Р° РЅРµ РЅР°Р№РґРµРЅР°. ";
+  const ERROR_QUERY = "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ Р·Р°РїСЂРѕСЃ. ";
 
-  // конструктор
+  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
   public function __construct()
   {    
     $this->dbConnect();
   }
   
-  // подключение к базе
+  // РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Р°Р·Рµ
   private static function dbConnect()
   {
      $config = Model::getConfig();
      
-    // сооединиться с сервером
+    // СЃРѕРѕРµРґРёРЅРёС‚СЊСЃСЏ СЃ СЃРµСЂРІРµСЂРѕРј
     $connect = mysql_connect($config['serverMySQL'], $config['userMySQL'], $config['passwordMySQL'])
       or die(Model::ERROR_CONNECT . mysql_error());
       
-    // подключиться к базе  
+    // РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє Р±Р°Р·Рµ  
     mysql_select_db($config['nameMySQL'], $connect)
       or die(Model::ERROR_DB . mysql_error());
 
     return true;
   }
   
-  // получить настройки
+  // РїРѕР»СѓС‡РёС‚СЊ РЅР°СЃС‚СЂРѕР№РєРё
   private static function getConfig()
   {
     $configDefault = array(
@@ -48,7 +48,7 @@ class Model extends Main
   }
   
    
-  // открыть все модели, чтобы иметь к ним доступ
+  // РѕС‚РєСЂС‹С‚СЊ РІСЃРµ РјРѕРґРµР»Рё, С‡С‚РѕР±С‹ РёРјРµС‚СЊ Рє РЅРёРј РґРѕСЃС‚СѓРї
   public static function openModels()
   {
     $dir = Model::MODELS_DIR;
@@ -69,7 +69,7 @@ class Model extends Main
     }
   }
   
-  // получить объекты из базы по условию
+  // РїРѕР»СѓС‡РёС‚СЊ РѕР±СЉРµРєС‚С‹ РёР· Р±Р°Р·С‹ РїРѕ СѓСЃР»РѕРІРёСЋ
   public static function find($modelName, $where = '1')
   {
     Model::dbConnect();
@@ -83,7 +83,7 @@ class Model extends Main
     return $models;
   }
   
-  // сохранить объект
+  // СЃРѕС…СЂР°РЅРёС‚СЊ РѕР±СЉРµРєС‚
   public function save($tableName, $keys, $fields)
   {
     $save = false;

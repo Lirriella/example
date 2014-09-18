@@ -3,14 +3,14 @@
 class SiteController extends Controller
 {
 
-  // конструктор
+  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
   public function __construct()
   {
     $this->modelName = 'Site';
     $this->controllerName = 'SiteController';
   }
   
-  // домашняя страница
+  // РґРѕРјР°С€РЅСЏСЏ СЃС‚СЂР°РЅРёС†Р°
   public function actionIndex()
   {
     Site::goToDefaultPage();
