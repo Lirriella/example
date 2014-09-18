@@ -1,0 +1,1 @@
+Настройки базы - \www\protected\config\main.php

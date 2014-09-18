@@ -1,0 +1,136 @@
+html, body {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+
+h2
+{
+  margin:0 0 10px 0;
+  padding:0;
+}
+
+.container
+{
+  position: relative;
+  min-height: 90%;
+  width:100%;
+}
+
+.header
+{
+  height:0;
+  margin:0;
+  padding:0;
+}
+
+.mainmenu{
+   float: left;
+   width: 100%;
+   background: #F5F5F5;
+   margin-bottom: 10px;
+}
+
+.mainmenu ul {
+   margin: auto;
+   padding: 0;
+   text-align:center;
+   width: 600px;
+}
+
+.mainmenu ul li {
+   border: 1px solid #E0E0E0;
+   float: left;
+   list-style: none;
+   width: 298px;
+}
+
+.mainmenu ul li a {
+   display: block;
+   color: black;
+   height: 30px;
+   line-height: 30px;
+   text-decoration: none;
+   text-indent: 5px;
+}
+
+.mainmenu ul li a:hover {
+   background: #606060;
+   color:white;
+   text-decoration: none;
+}
+
+.notice
+{
+  color: red;
+  height: auto;
+  margin: 0 0 10px 0;
+  text-align:center;
+}
+
+.content
+{
+  margin: auto;
+  width: 960px;
+  text-align: center;
+}
+
+.content .table-content
+{
+  margin: 0 auto 10px;
+  width: 400px;
+  text-align: left;
+}
+
+.content .table-content td
+{
+  min-width:120px;
+  padding: 0 10px;
+}
+
+.content .table-content .button
+{
+  margin:2px;
+  width:153px;
+}
+
+.clear 
+{
+    clear:both;
+}
+
+.footer
+{
+    padding: 10px;
+    margin: 0;
+    font-size: 0.8em;
+    text-align: center;
+    border-top: 1px solid #E0E0E0;
+    height: 5%;
+    position: relative;
+}
+
+.book-list
+{
+  margin: 0 auto 10px;;
+  width: 400px;
+}
+
+.book-list td
+{
+  border: 1px solid;
+  min-width: 100px;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.comment
+{
+  font-size: 0.8em;
+  text-align:center;
+  margin-bottom:10px;
+}
