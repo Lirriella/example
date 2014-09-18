@@ -1,1 +1,1 @@
-Настройки базы - \www\protected\config\main.php
+п»їРќР°СЃС‚СЂРѕР№РєРё Р±Р°Р·С‹ - \www\protected\config\main.php
